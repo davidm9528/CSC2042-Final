@@ -1,0 +1,21 @@
+--4th
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (1, 39283942, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (2, 39283944, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (3, 39283942, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (4, 39283933, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (5, 39283945, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (6, 39283944, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (7, 39283937, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (8, 39283941, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (9, 39283947, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (10, 39283944, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (11, 39283932, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (12, 39283941, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (13, 39283930, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (14, 39283944, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (15, 39283942, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (16, 39283940, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (17, 39283935, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (18, 39283947, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (19, 39283931, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (20, 39283933, 400004);
