@@ -1,3 +1,4 @@
+--Nathan 40226743
 SELECT alt.LeaseID, alt.ApartmentNo, CONCAT(Building.BuildingNameorNum, ' ', Building.Street, ' ', Building.PostCode) AS 'ADDRESS',(alt.NumBedrooms-alt.NumTenants) AS 'NumFreeBedrooms' 
 FROM (SELECT Apartment.ApartmentNo,Apartment.NumBedrooms,Apartment.BuildingID,lt.LeaseID,lt.NumTenants 
 FROM Apartment 
