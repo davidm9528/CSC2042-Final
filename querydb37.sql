@@ -1,4 +1,4 @@
-SELECT alt.LeaseID, alt.ApartmentNo,Building.BuildingNameorNum,Building.Street,Building.PostCode,(alt.NumBedrooms-alt.NumTenants) AS 'NumFreeBedrooms' 
+SELECT alt.LeaseID, alt.ApartmentNo, CONCAT(Building.BuildingNameorNum, ' ', Building.Street, ' ', Building.PostCode) AS 'ADDRESS',(alt.NumBedrooms-alt.NumTenants) AS 'NumFreeBedrooms' 
 FROM (SELECT Apartment.ApartmentNo,Apartment.NumBedrooms,Apartment.BuildingID,lt.LeaseID,lt.NumTenants 
 FROM Apartment 
 INNER JOIN (SELECT LeaseTenants.LeaseID,LeaseTenants.TenantID, Lease.ApartmentID, COUNT(*) AS 'NumTenants' 
