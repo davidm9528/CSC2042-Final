@@ -34,6 +34,8 @@ insert into Person (FName, SName, ContactNumber, DoB, EmergencyContactName, Emer
 insert into Person (FName, SName, ContactNumber, DoB, EmergencyContactName, EmergencyContactNumber) values ('Marni', 'Entres', '07401820098', '1996-02-19', 'Corty', '07771267543');
 insert into Person (FName, SName, ContactNumber, DoB, EmergencyContactName, EmergencyContactNumber) values ('Tove', 'Deetlefs', '07305518157', '1997-12-23', 'Ede', '07268241578');
 insert into Person (FName, SName, ContactNumber, DoB, EmergencyContactName, EmergencyContactNumber) values ('Tommie', 'Deverille', '07951084108', '1997-11-23', 'Dyana', '07554909115');
+insert into Person (FName, SName, ContactNumber, DoB, EmergencyContactName, EmergencyContactNumber) values ('James', 'Smoth', '07951009708', '1998-11-21', 'Davo', '07554412115');
+insert into Person (FName, SName, ContactNumber, DoB, EmergencyContactName, EmergencyContactNumber) values ('Jessica', 'Cairns', '07959034108', '1996-01-16', 'Jillian', '07550019115');
 
 #Inserts Tenants
 INSERT INTO Tenant(PersonID) VALUES(1);
@@ -57,6 +59,11 @@ INSERT INTO Tenant(PersonID) VALUES(28);
 INSERT INTO Tenant(PersonID) VALUES(29);
 INSERT INTO Tenant(PersonID) VALUES(30);
 INSERT INTO Tenant(PersonID) VALUES(31);
+INSERT INTO Tenant(PersonID) VALUES(32);
+INSERT INTO Tenant(PersonID) VALUES(33);
+INSERT INTO Tenant(PersonID) VALUES(34);
+INSERT INTO Tenant(PersonID) VALUES(35);
+INSERT INTO Tenant(PersonID) VALUES(36);
 
 #Inserts Employees
 INSERT INTO Employee(PersonID, Salary) VALUES(11, 20000);
@@ -69,6 +76,7 @@ INSERT INTO Employee(PersonID, Salary) VALUES(17, 30000);
 INSERT INTO Employee(PersonID, Salary) VALUES(18, 42000);
 INSERT INTO Employee(PersonID, Salary) VALUES(19, 45675);
 INSERT INTO Employee(PersonID, Salary) VALUES(20, 63250);
+INSERT INTO Employee(PersonID, Salary) VALUES(37, 28000);
 
 #Inserts Managers
 INSERT INTO Manager(EmployeeID) VALUES(1);
@@ -77,6 +85,7 @@ INSERT INTO Manager(EmployeeID) VALUES(3);
 INSERT INTO Manager(EmployeeID) VALUES(4);
 INSERT INTO Manager(EmployeeID) VALUES(5);
 INSERT INTO Manager(EmployeeID) VALUES(6);
+INSERT INTO Manager(EmployeeID) VALUES(11);
 
 #Inserts Technicians
 INSERT INTO Technician(EmployeeID) VALUES(7);
@@ -93,44 +102,29 @@ INSERT INTO Skill(SkillName) VALUES("electrical");
 INSERT INTO TechnicianSkill(SkillID, TechnicianID) VALUES (1,1);
 INSERT INTO TechnicianSkill(SkillID, TechnicianID) VALUES (2,2);
 INSERT INTO TechnicianSkill(SkillID, TechnicianID) VALUES (3,3);
-INSERT INTO TechnicianSkill(SkillID, TechnicianID) VALUES (3,4);
+INSERT INTO TechnicianSkill(SkillID, TechnicianID) VALUES (1,3);
 
 #Inserts Bank Accounts
 INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (1, 39283942, 400004);
-INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (2, 39255944, 400004);
-INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (3, 39267942, 400004);
-INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (4, 39212933, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (2, 39283944, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (3, 39283942, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (4, 39283933, 400004);
 INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (5, 39283945, 400004);
-INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (6, 39289944, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (6, 39283944, 400004);
 INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (7, 39283937, 400004);
-INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (8, 39365941, 400004);
-INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (9, 39089947, 400004);
-INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (10, 31243944, 400004);
-INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (11, 39571932, 400004);
-INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (12, 39258941, 400004);
-INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (13, 39890930, 400004);
-INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (14, 39143944, 400004);
-INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (15, 39567942, 400004);
-INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (16, 39783940, 400004);
-INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (17, 39458935, 400004);
-INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (18, 39901947, 400004);
-INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (19, 39532931, 400004);
-INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (20, 39674933, 400004);
-INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (21, 39678942, 400004);
-INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (22, 39432944, 400004);
-INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (23, 3967942, 400004);
-INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (24, 39278933, 400004);
-INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (25, 39781945, 400004);
-INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (26, 39149944, 400004);
-INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (27, 39351937, 400004);
-INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (28, 39267941, 400004);
-INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (29, 39908947, 400004);
-INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (30, 39567944, 400004);
-INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (31, 39232932, 400004);
-INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (32, 39145941, 400004);
-INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (33, 39907930, 400004);
-INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (34, 39562944, 400004);
-INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (35, 39672942, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (8, 39283941, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (9, 39283947, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (10, 39283944, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (11, 39283932, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (12, 39283941, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (13, 39283930, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (14, 39283944, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (15, 39283942, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (16, 39283940, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (17, 39283935, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (18, 39283947, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (19, 39283931, 400004);
+INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (20, 39283933, 400004);
 
 #Inserts Buildings
 INSERT INTO Building(BuildingNameOrNum, Street, Postcode) VALUES ("Ash 1", "1 Ash Ave", "BT9 5BW");
@@ -138,6 +132,8 @@ INSERT INTO Building(BuildingNameOrNum, Street, Postcode) VALUES ("Ash 2", "2 As
 INSERT INTO Building(BuildingNameOrNum, Street, Postcode) VALUES ("Oak 1", "1 Oak Cres", "BT9 5BW");
 INSERT INTO Building(BuildingNameOrNum, Street, Postcode) VALUES ("Sycamore 1", "1 Sycamore St", "BT9 5BW");
 INSERT INTO Building(BuildingNameOrNum, Street, Postcode) VALUES ("Sycamore 2", "2 Sycamore St", "BT9 5BW");
+INSERT INTO `Building`(`BuildingNameorNum`,`Street`,`PostCode`) VALUES('72','Malone Avenue', 'BT9 6ER');
+INSERT INTO `Building`(`BuildingNameorNum`,`Street`,`PostCode`) VALUES('10','Malone Road', 'BT7 1NP');
 
 #Inserts Apartments
 INSERT INTO Apartment(ApartmentNo, BuildingID, ManagerID, NumBedrooms, NumBathrooms, TotalArea) VALUES (1,1,2,4,4,1500);
@@ -151,6 +147,9 @@ INSERT INTO Apartment(ApartmentNo, BuildingID, ManagerID, NumBedrooms, NumBathro
 INSERT INTO Apartment(ApartmentNo, BuildingID, ManagerID, NumBedrooms, NumBathrooms, TotalArea) VALUES (2,4,5,2,1,1200);
 INSERT INTO Apartment(ApartmentNo, BuildingID, ManagerID, NumBedrooms, NumBathrooms, TotalArea) VALUES (1,5,4,2,1,1500);
 INSERT INTO Apartment(ApartmentNo, BuildingID, ManagerID, NumBedrooms, NumBathrooms, TotalArea) VALUES (2,5,4,2,1,1400);
+INSERT INTO `Apartment`(`ApartmentNo`,`NumBedrooms`,`NumBathrooms`,`TotalArea`,`BuildingID`,`ManagerID`) VALUES(2,4,2,300,6,7);
+INSERT INTO `Apartment`(`ApartmentNo`,`NumBedrooms`,`NumBathrooms`,`TotalArea`,`BuildingID`,`ManagerID`) VALUES(1,1,1,200,6,7);
+INSERT INTO `Apartment`(`ApartmentNo`,`NumBedrooms`,`NumBathrooms`,`TotalArea`,`BuildingID`,`ManagerID`) VALUES(1,1,1,225,7,7);
 
 #Inserts office
 INSERT INTO Office(ApartmentID, ManagerID) VALUES (4,1);
@@ -159,6 +158,7 @@ INSERT INTO Office(ApartmentID, ManagerID) VALUES (6,3);
 INSERT INTO Office(ApartmentID, ManagerID) VALUES (1,4);
 INSERT INTO Office(ApartmentID, ManagerID) VALUES (2,5);
 INSERT INTO Office(ApartmentID, ManagerID) VALUES (3,6);
+INSERT INTO `Office`(`ApartmentID`,`ManagerID`) VALUES(14,7);
 
 #Inserts leases
 INSERT INTO Lease(ApartmentID, Duration, ManagerID, Rent, StartDate) VALUES (1,12,1,250,'2019-09-16');
@@ -171,6 +171,9 @@ INSERT INTO Lease(ApartmentID, Duration, ManagerID, Rent, StartDate) VALUES (7,9
 INSERT INTO Lease(ApartmentID, Duration, ManagerID, Rent, StartDate) VALUES (8,6,4,280,'2019-09-23');
 INSERT INTO Lease(ApartmentID, Duration, ManagerID, Rent, StartDate) VALUES (9,9,4,220,'2019-09-16');
 INSERT INTO Lease(ApartmentID, Duration, ManagerID, Rent, StartDate) VALUES (10,9,2,220,'2019-09-16');
+INSERT INTO `Lease`(`ApartmentID`,`ManagerID`,`StartDate`,`Duration`,`Rent`) VALUES(12,7,'2019-01-01',24,1000);
+INSERT INTO `Lease`(`ApartmentID`,`ManagerID`,`StartDate`,`Duration`,`Rent`) VALUES(14,7,'2019-01-01',9,400);
+INSERT INTO `Lease`(`ApartmentID`,`ManagerID`,`StartDate`,`Duration`,`Rent`) VALUES(13,7,'2019-04-01',12,400);
 
 #Inserts TenantLeases
 INSERT INTO LeaseTenants(LeaseID, TenantID) VALUES (1,1);
@@ -193,3 +196,8 @@ INSERT INTO LeaseTenants(LeaseID, TenantID) VALUES (9,18);
 INSERT INTO LeaseTenants(LeaseID, TenantID) VALUES (9,19);
 INSERT INTO LeaseTenants(LeaseID, TenantID) VALUES (10,20);
 INSERT INTO LeaseTenants(LeaseID, TenantID) VALUES (10,21);
+INSERT INTO `LeaseTenants`(`LeaseID`,`TenantID`) VALUES(11,22);
+INSERT INTO `LeaseTenants`(`LeaseID`,`TenantID`) VALUES(11,23);
+INSERT INTO `LeaseTenants`(`LeaseID`,`TenantID`) VALUES(11,24);
+INSERT INTO `LeaseTenants`(`LeaseID`,`TenantID`) VALUES(12,25);
+INSERT INTO `LeaseTenants`(`LeaseID`,`TenantID`) VALUES(13,26);
