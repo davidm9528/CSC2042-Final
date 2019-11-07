@@ -23,3 +23,14 @@ INNER JOIN Lease on Manager.ManagerID = Lease.ManagerID
 GROUP BY Person.PersonID
 ORDER BY COUNT(Lease.ManagerID) ASC
 LIMIT 3;
+
+--Peter Sleith 40237264
+--Displays all managers and the number of active leases they manage
+SELECT Manager.ManagerID, CONCAT(Person.FName, ' ', Person.SName)AS 'Manager Name', COUNT(*)AS 'Num of Leases'
+FROM Manager
+LEFT JOIN (SELECT Lease.LeaseID,Lease.ManagerID 
+FROM Lease 
+WHERE (SUBDATE(CURRENT_DATE, INTERVAL Lease.Duration MONTH) < Lease.StartDate))current ON current.ManagerID = Manager.managerID
+INNER JOIN Employee ON Manager.EmployeeID = Employee.EmployeeID
+INNER JOIN Person ON Employee.PersonID = Person.PersonID
+GROUP BY Manager.ManagerID;
