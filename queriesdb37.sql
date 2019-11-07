@@ -15,14 +15,14 @@ LEFT JOIN Apartment ON Apartment.BuildingID = Building.BuildingID
 WHERE Apartment.NumBedrooms = Apartment.NumBathrooms;
 
 --Daniel White 40233631
---Displays all managers with salaries and numbers of leases and apartments managed
-SELECT Manager.ManagerID, Person.FName AS 'First Name', Person.SName AS 'Surname', Employee.Salary, COUNT(Lease.ManagerID) AS 'Leases Managed', COUNT(Apartment.ManagerID) AS 'Apartments Managed' FROM Person
+--Finds the 3 managers with the most leases managed
+SELECT Person.PersonID, Person.FName AS 'First Name', Person.SName AS 'Surname', COUNT(Lease.ManagerID) AS 'Leases Managed' FROM Person
 INNER JOIN Employee on Person.PersonID = Employee.PersonID
 INNER JOIN Manager on Employee.EmployeeID = Manager.EmployeeID
 INNER JOIN Lease on Manager.ManagerID = Lease.ManagerID
-INNER JOIN Apartment on Lease.ApartmentID = Apartment.ApartmentID
 GROUP BY Person.PersonID
-ORDER BY COUNT(Lease.ManagerID) ASC;
+ORDER BY COUNT(Lease.ManagerID) DESC
+LIMIT 3;
 
 --Peter Sleith 40237264
 --Displays all managers and the number of active leases they manage
