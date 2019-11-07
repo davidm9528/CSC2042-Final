@@ -15,8 +15,11 @@ LEFT JOIN Apartment ON Apartment.BuildingID = Building.BuildingID
 WHERE Apartment.NumBedrooms = Apartment.NumBathrooms;
 
 -- Daniel White 40233631
--- Shows any leases with less than 6 months remainsing
-SELECT Lease.LeaseID AS 'Lease ID', Building.BuildingNameorNum AS 'Building Name', Apartment.ApartmentNo AS 'Apartment No.' FROM Lease
-INNER JOIN Apartment on Lease.ApartmentID = Apartment.ApartmentID
-INNER JOIN Building on Apartment.BuildingID = Building.BuildingID
-WHERE ((Lease.Duration * 30.5) - DATEDIFF(CURRENT_DATE, Lease.StartDate)) < 183;
+-- Finds the 3 managers with the lease leases managed
+SELECT Person.PersonID, Person.FName AS 'First Name', Person.SName AS 'Surname', COUNT(Lease.ManagerID) AS 'Leases Managed' FROM Person
+INNER JOIN Employee on Person.PersonID = Employee.PersonID
+INNER JOIN Manager on Employee.EmployeeID = Manager.EmployeeID
+INNER JOIN Lease on Manager.ManagerID = Lease.ManagerID
+GROUP BY Person.PersonID
+ORDER BY COUNT(Lease.ManagerID) ASC
+LIMIT 3;
