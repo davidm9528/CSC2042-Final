@@ -13,3 +13,10 @@ SELECT Building.BuildingID AS "Building", Apartment.ApartmentNo AS "Apartment No
 FROM Building 
 LEFT JOIN Apartment ON Apartment.BuildingID = Building.BuildingID 
 WHERE Apartment.NumBedrooms = Apartment.NumBathrooms;
+
+-- Daniel White 40233631
+-- Shows any leases with less than 6 months remainsing
+SELECT Lease.LeaseID AS 'Lease ID', Building.BuildingNameorNum AS 'Building Name', Apartment.ApartmentNo AS 'Apartment No.' FROM Lease
+INNER JOIN Apartment on Lease.ApartmentID = Apartment.ApartmentID
+INNER JOIN Building on Apartment.BuildingID = Building.BuildingID
+WHERE ((Lease.Duration * 30.5) - DATEDIFF(CURRENT_DATE, Lease.StartDate)) < 183;
