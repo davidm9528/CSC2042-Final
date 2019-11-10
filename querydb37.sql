@@ -1,8 +1,40 @@
---Nathan 40226743
-SELECT alt.LeaseID, alt.ApartmentNo, CONCAT(Building.BuildingNameorNum, ' ', Building.Street, ' ', Building.PostCode) AS 'ADDRESS',(alt.NumBedrooms-alt.NumTenants) AS 'NumFreeBedrooms' 
+#Nathan Donaghy 40226743
+#This query finds all current, non-expired leases for apartments where there are more bedrooms than tenants living in the apartment.
+SELECT alt.LeaseID, alt.ApartmentNo, CONCAT(Building.BuildingNameorNum, ' ', Building.Street, ' ', Building.PostCode) AS 'Address',(alt.NumBedrooms-alt.NumTenants) AS 'Number of Free Bedrooms' 
 FROM (SELECT Apartment.ApartmentNo,Apartment.NumBedrooms,Apartment.BuildingID,lt.LeaseID,lt.NumTenants 
 FROM Apartment 
 INNER JOIN (SELECT LeaseTenants.LeaseID,LeaseTenants.TenantID, Lease.ApartmentID, COUNT(*) AS 'NumTenants' 
 FROM LeaseTenants 
 INNER JOIN Lease ON LeaseTenants.LeaseID = Lease.LeaseID WHERE (SUBDATE(CURRENT_DATE, INTERVAL Lease.Duration MONTH) < Lease.StartDate) GROUP BY LeaseTenants.LeaseID)lt ON lt.ApartmentID = Apartment.ApartmentID)alt 
-INNER JOIN Building ON alt.BuildingID = Building.BuildingID WHERE (alt.NumBedrooms - alt.NumTenants >0);
+INNER JOIN Building ON alt.BuildingID = Building.BuildingID WHERE (alt.NumBedrooms - alt.NumTenants >0)
+ORDER BY `Number of Free Bedrooms` DESC;
+
+#David Mackenzie 40238376
+#Find the num of Apartments in the Building with ensuites
+SELECT Building.BuildingID AS "Building", Apartment.ApartmentNo AS "Apartment No", Apartment.NumBedrooms AS "Bedrooms", Apartment.NumBathrooms AS "Bathrooms"
+FROM Building 
+LEFT JOIN Apartment ON Apartment.BuildingID = Building.BuildingID 
+WHERE Apartment.NumBedrooms = Apartment.NumBathrooms;
+
+#Daniel White 40233631
+#Finds the 3 managers with the most leases managed
+SELECT Manager.ManagerID, Person.FName AS 'First Name', Person.SName AS 'Surname', COUNT(Lease.ManagerID) AS 'Leases Managed' FROM Person
+INNER JOIN Employee on Person.PersonID = Employee.PersonID
+INNER JOIN Manager on Employee.EmployeeID = Manager.EmployeeID
+INNER JOIN Lease on Manager.ManagerID = Lease.ManagerID
+GROUP BY Person.PersonID
+ORDER BY COUNT(Lease.ManagerID) DESC
+LIMIT 3;
+
+#Peter Sleith 40237264
+#QA wants a list of all technicians with multiple skills and to see their current salary.
+#SELECT Technician.TechnicianID, CONCAT(Person.FName, ' ', Person.SName)AS 'Technician Name', Employee.Salary, COUNT(*)AS 'Number of Skills'
+#FROM (SELECT Technician.TechnicianID 
+#FROM Technician 
+#INNER JOIN TechnicianSkill ON Technician.TechnicianID = TechnicianSkill.TechnicianID
+#GROUP BY Technician.TechnicianID
+#HAVING COUNT(*)>1)
+#INNER JOIN Employee ON Technician.EmployeeID = Employee.EmployeeID
+#INNER JOIN Person ON Employee.PersonID = Person.PersonID;
+
+
