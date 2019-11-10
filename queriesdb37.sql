@@ -1,4 +1,5 @@
 --Nathan Donaghy 40226743
+--This query finds all current, non-expired leases for apartments where there are more bedrooms than tenants living in the apartment.
 SELECT alt.LeaseID, alt.ApartmentNo, CONCAT(Building.BuildingNameorNum, ' ', Building.Street, ' ', Building.PostCode) AS 'Address',(alt.NumBedrooms-alt.NumTenants) AS 'Number of Free Bedrooms' 
 FROM (SELECT Apartment.ApartmentNo,Apartment.NumBedrooms,Apartment.BuildingID,lt.LeaseID,lt.NumTenants 
 FROM Apartment 
