@@ -127,11 +127,11 @@ INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (19, 3928393
 INSERT INTO Bank_Account (PersonID, AccountNumber, SortCode) VALUES (20, 39283933, 400004);
 
 #Inserts Buildings
-INSERT INTO Building(BuildingNameOrNum, Street, Postcode) VALUES ("Ash 1", "1 Ash Ave", "BT9 5BW");
-INSERT INTO Building(BuildingNameOrNum, Street, Postcode) VALUES ("Ash 2", "2 Ash Ave", "BT9 5BW");
-INSERT INTO Building(BuildingNameOrNum, Street, Postcode) VALUES ("Oak 1", "1 Oak Cres", "BT9 5BW");
-INSERT INTO Building(BuildingNameOrNum, Street, Postcode) VALUES ("Sycamore 1", "1 Sycamore St", "BT9 5BW");
-INSERT INTO Building(BuildingNameOrNum, Street, Postcode) VALUES ("Sycamore 2", "2 Sycamore St", "BT9 5BW");
+INSERT INTO Building(BuildingNameOrNum, Street, Postcode) VALUES ("Ash 1", "Ash Ave", "BT9 5BW");
+INSERT INTO Building(BuildingNameOrNum, Street, Postcode) VALUES ("Ash 2", "Ash Ave", "BT9 5BW");
+INSERT INTO Building(BuildingNameOrNum, Street, Postcode) VALUES ("Oak 1", "Oak Cres", "BT9 5BW");
+INSERT INTO Building(BuildingNameOrNum, Street, Postcode) VALUES ("Sycamore 1", "Sycamore St", "BT9 5BW");
+INSERT INTO Building(BuildingNameOrNum, Street, Postcode) VALUES ("Sycamore 2", "Sycamore St", "BT9 5BW");
 INSERT INTO `Building`(`BuildingNameorNum`,`Street`,`PostCode`) VALUES('72','Malone Avenue', 'BT9 6ER');
 INSERT INTO `Building`(`BuildingNameorNum`,`Street`,`PostCode`) VALUES('10','Malone Road', 'BT7 1NP');
 
